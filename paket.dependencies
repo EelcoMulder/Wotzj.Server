@@ -1,0 +1,5 @@
+source https://www.nuget.org/api/v2
+framework: netcoreapp2.0
+nuget Suave 2.3.0-beta beta
+nuget Suave.DotLiquid 2.3.0-beta3 beta
+nuget Suave.OAuth 0.11.0
