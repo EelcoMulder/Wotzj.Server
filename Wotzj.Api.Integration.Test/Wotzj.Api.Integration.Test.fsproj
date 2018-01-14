@@ -4,7 +4,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
-
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <FscToolPath>C:\Program Files (x86)\Microsoft SDKs\F#\4.1\Framework\v4.0</FscToolPath>
+    <FscToolExe>fsc.exe</FscToolExe>   
   </PropertyGroup>
 
   <ItemGroup>
