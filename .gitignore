@@ -1,7 +1,7 @@
 /Wotzj.Api/obj
 /Wotzj.Api/bin
 /packages
-/Wotzj.Server.Integration.Test/bin
-/Wotzj.Server.Integration.Test/obj
+/Wotzj.Api.Integration.Test/bin
+/Wotzj.Api.Integration.Test/obj
 /Wotzj.Api.Test/bin
 /Wotzj.Api.Test/obj
