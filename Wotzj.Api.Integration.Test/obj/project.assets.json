@@ -7104,11 +7104,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\FSharp\\Wotzj\\Wotzj.Server\\Wotzj.Server.Integration.Test\\Wotzj.Server.Integration.Test.fsproj",
-      "projectName": "Wotzj.Server.Integration.Test",
-      "projectPath": "C:\\FSharp\\Wotzj\\Wotzj.Server\\Wotzj.Server.Integration.Test\\Wotzj.Server.Integration.Test.fsproj",
+      "projectUniqueName": "C:\\FSharp\\Wotzj\\Wotzj.Server\\Wotzj.Api.Integration.Test\\Wotzj.Api.Integration.Test.fsproj",
+      "projectName": "Wotzj.Api.Integration.Test",
+      "projectPath": "C:\\FSharp\\Wotzj\\Wotzj.Server\\Wotzj.Api.Integration.Test\\Wotzj.Api.Integration.Test.fsproj",
       "packagesPath": "C:\\Users\\Eelco\\.nuget\\packages\\",
-      "outputPath": "C:\\FSharp\\Wotzj\\Wotzj.Server\\Wotzj.Server.Integration.Test\\obj\\",
+      "outputPath": "C:\\FSharp\\Wotzj\\Wotzj.Server\\Wotzj.Api.Integration.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

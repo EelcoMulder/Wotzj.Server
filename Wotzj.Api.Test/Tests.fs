@@ -5,4 +5,4 @@ open Xunit
 
 [<Fact>]
 let ``My test`` () =
-    Assert.True(false)
+    Assert.True(true)
