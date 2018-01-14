@@ -3,3 +3,5 @@
 /packages
 /Wotzj.Server.Integration.Test/bin
 /Wotzj.Server.Integration.Test/obj
+/Wotzj.Api.Test/bin
+/Wotzj.Api.Test/obj

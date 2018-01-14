@@ -4,11 +4,11 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
-    
+
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Tests.fs" />
+    <Compile Include="Authorization.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

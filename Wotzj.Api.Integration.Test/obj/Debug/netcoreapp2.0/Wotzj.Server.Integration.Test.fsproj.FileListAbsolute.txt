@@ -1,0 +1,10 @@
+C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Server.Integration.Test\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Server.Integration.Test\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Server.Integration.Test\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Server.Integration.Test\bin\Debug\netcoreapp2.0\Wotzj.Server.Integration.Test.deps.json
+C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Server.Integration.Test\bin\Debug\netcoreapp2.0\Wotzj.Server.Integration.Test.runtimeconfig.json
+C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Server.Integration.Test\bin\Debug\netcoreapp2.0\Wotzj.Server.Integration.Test.runtimeconfig.dev.json
+C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Server.Integration.Test\bin\Debug\netcoreapp2.0\Wotzj.Server.Integration.Test.dll
+C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Server.Integration.Test\bin\Debug\netcoreapp2.0\Wotzj.Server.Integration.Test.pdb
+C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Server.Integration.Test\obj\Debug\netcoreapp2.0\Wotzj.Server.Integration.Test.dll
+C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Server.Integration.Test\obj\Debug\netcoreapp2.0\Wotzj.Server.Integration.Test.pdb
