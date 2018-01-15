@@ -37,9 +37,10 @@ let getPort (argv: string[]) =
 [<EntryPoint>]
 let main argv =
 
-//   let conf = 
-//     { defaultConfig with
-//             bindings = [ HttpBinding.create HTTP IPAddress.Loopback <| getPort argv ] }
+    let conf = 
+        { defaultConfig with
+                bindings = [ HttpBinding.create HTTP System.Net.IPAddress.Loopback <| getPort argv ] }
+
     let model = {
         name = "anonymous"; logged_id = ""; logged_in = false
         provider = ""
@@ -82,5 +83,5 @@ let main argv =
             (OK "Hello World!")
         ]
 
-    startWebServer defaultConfig app
+    startWebServer conf app
     0
