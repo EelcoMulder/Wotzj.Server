@@ -4,7 +4,7 @@ open Suave.Filters
 open Suave.OAuth
 open Suave.Operators
 open Suave.Successful
-open System
+open System.IO
 open System.Configuration
 
 type AppModel =
@@ -15,7 +15,7 @@ type AppModel =
         mutable provider: string
         mutable providers: string[]
     }
-let templateDir = @"C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Api\templates" //Directory.GetCurrentDirectory() + "/Wotzj.Api/templates"
+let templateDir = Directory.GetCurrentDirectory() + "/Wotzj.Api/templates"
 setTemplatesDir templateDir
 
 let oauthConfigs =
