@@ -15,7 +15,7 @@ type AppModel =
         mutable provider: string
         mutable providers: string[]
     }
-let templateDir = Directory.GetCurrentDirectory() + "/Wotzj.Api/templates"
+let templateDir = Directory.GetCurrentDirectory() + "/templates"
 setTemplatesDir templateDir
 
 let oauthConfigs =
