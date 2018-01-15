@@ -5,6 +5,7 @@ open Suave.OAuth
 open Suave.Operators
 open Suave.Successful
 open System.IO
+open System.Configuration
 
 type AppModel =
     {
@@ -14,15 +15,17 @@ type AppModel =
         mutable provider: string
         mutable providers: string[]
     }
-let templateDir = @"C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Api\templates" //Directory.GetCurrentDirectory() + "/Wotzj.Api/templates"
+let templateDir = Directory.GetCurrentDirectory() + "/templates"
 setTemplatesDir templateDir
 
 let oauthConfigs =
+    let gitHubClientId = ConfigurationManager.AppSettings.Item("GitHub.ClientId")
+    let gitHubClientSecret = ConfigurationManager.AppSettings.Item("GitHub.ClientSecret")
     defineProviderConfigs (function
         | "github" -> fun c ->
             {c with
-                client_id = "379106419765e4078841"
-                client_secret = "ee001e36aa8c4ea7baaa3baa367eb407ae0c7750"}
+                client_id = gitHubClientId
+                client_secret = gitHubClientSecret }
         | _ -> id   // we do not provide secret keys for other oauth providers
     )
 let appWebPart =
@@ -77,7 +80,7 @@ let main argv =
                 (choose [
                     path "/api/series" >=> GET >=> OK "You've accessed protected part!"
                 ])
-                (RequestErrors.FORBIDDEN "You do not have access to that application part (/protected)")
+                (RequestErrors.FORBIDDEN "You do not have access to that application part")
 
             // we'll never get here
             (OK "Hello World!")
