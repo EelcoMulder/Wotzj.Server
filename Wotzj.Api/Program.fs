@@ -4,7 +4,7 @@ open Suave.Filters
 open Suave.OAuth
 open Suave.Operators
 open Suave.Successful
-open System.IO
+open System
 open System.Configuration
 
 type AppModel =
@@ -15,7 +15,7 @@ type AppModel =
         mutable provider: string
         mutable providers: string[]
     }
-let templateDir = Directory.GetCurrentDirectory() + "/templates"
+let templateDir = @"C:\FSharp\Wotzj\Wotzj.Server\Wotzj.Api\templates" //Directory.GetCurrentDirectory() + "/Wotzj.Api/templates"
 setTemplatesDir templateDir
 
 let oauthConfigs =
@@ -80,7 +80,7 @@ let main argv =
                 (choose [
                     path "/api/series" >=> GET >=> OK "You've accessed protected part!"
                 ])
-                (RequestErrors.FORBIDDEN "You do not have access to that application part")
+                (RequestErrors.FORBIDDEN "You do not have access to that application part (/protected)")
 
             // we'll never get here
             (OK "Hello World!")
