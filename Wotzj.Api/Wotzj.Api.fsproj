@@ -11,6 +11,9 @@
     <Content Include="templates\main.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>    
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Suave" Version="2.3.0-beta" />
