@@ -26,7 +26,7 @@ let oauthConfigs =
             {c with
                 client_id = gitHubClientId
                 client_secret = gitHubClientSecret }
-        | _ -> id   // we do not provide secret keys for other oauth providers
+        | _ -> id 
     )
 let appWebPart =
   choose
@@ -55,7 +55,7 @@ let main argv =
             path "/" >=> page "main.html" model
 
             warbler(fun ctx ->
-                let authorizeRedirectUri = buildLoginUrl ctx in
+                let authorizeRedirectUri = ConfigurationManager.AppSettings.Item("GitHub.RedirectUrl")//buildLoginUrl ctx in
                 // Note: logon state for current user is stored in global variable, which is ok for demo purposes.
                 // in your application you shoud store such kind of data to session data
                 OAuth.authorize authorizeRedirectUri oauthConfigs
