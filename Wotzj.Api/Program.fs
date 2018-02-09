@@ -1,41 +1,17 @@
 ﻿open Suave
 open Suave.DotLiquid
 open Suave.Filters
-open Suave.OAuth
 open Suave.Operators
 open Suave.Successful
 open System.IO
-open System.Configuration
+open Wotjz.Api.Authentication
+open Wotzj.Api.Infrastructure
+open WebServer
+open Wotzj.Api.Api
+open Wotzj.Api.BusinessLogic.Series
 
-type AppModel =
-    {
-        mutable name: string
-        mutable logged_id: string
-        mutable logged_in: bool
-        mutable provider: string
-        mutable providers: string[]
-    }
 let templateDir = Directory.GetCurrentDirectory() + "/templates"
 setTemplatesDir templateDir
-
-let oauthConfigs =
-    let gitHubClientId = ConfigurationManager.AppSettings.Item("GitHub.ClientId")
-    let gitHubClientSecret = ConfigurationManager.AppSettings.Item("GitHub.ClientSecret")
-    defineProviderConfigs (function
-        | "github" -> fun c ->
-            {c with
-                client_id = gitHubClientId
-                client_secret = gitHubClientSecret }
-        | _ -> id 
-    )
-let appWebPart =
-  choose
-    [ GET >=> choose
-        [ path "/api/series" >=> OK ("HAI") ] ]
-let getPort (argv: string[]) =
-  match Array.length argv with
-    | 0 -> 8080us
-    | _ -> argv.[0] |> uint16
 
 [<EntryPoint>]
 let main argv =
@@ -55,7 +31,7 @@ let main argv =
             path "/" >=> page "main.html" model
 
             warbler(fun ctx ->
-                let authorizeRedirectUri = ConfigurationManager.AppSettings.Item("GitHub.RedirectUrl")//buildLoginUrl ctx in
+                let authorizeRedirectUri = buildRedirectUri ctx.request in
                 // Note: logon state for current user is stored in global variable, which is ok for demo purposes.
                 // in your application you shoud store such kind of data to session data
                 OAuth.authorize authorizeRedirectUri oauthConfigs
@@ -63,7 +39,7 @@ let main argv =
 
                         model.logged_in <- true
                         model.logged_id <- sprintf "%s (name: %s)" loginData.Id loginData.Name
-
+                        
                         Redirection.FOUND "/"
                     )
                     (fun () ->
@@ -78,12 +54,15 @@ let main argv =
 
             OAuth.protectedPart
                 (choose [
-                    path "/api/series" >=> GET >=> OK "You've accessed protected part!"
+                    path "/api/series" 
+                        >=> GET 
+                        >=> choose
+                            [ path "/api/series" >=> handleGetAll getSeries
+                              pathScan "/api/series/%d" (fun id -> handleGet id getSerie) ]
                 ])
-                (RequestErrors.FORBIDDEN "You do not have access to that application part (/protected)")
+                (RequestErrors.FORBIDDEN "You do not have access to this application part")
 
-            // we'll never get here
-            (OK "Hello World!")
+            (OK "Unreachable")
         ]
 
     startWebServer conf app
