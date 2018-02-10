@@ -30,7 +30,7 @@
     <PackageReference Include="Suave.DotLiquid" Version="2.3.0-beta3" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.1" />
     <PackageReference Include="NewtonSoft.Json" Version="10.0.3" />
-    <PackageReference Include="SQLProvider" Version="1.1.23" />
+    <PackageReference Include="SQLProvider" Version="1.1.31" />
     <PackageReference Include="System.Data.SqlClient" Version="4.4.2" />
   </ItemGroup>
 </Project>
